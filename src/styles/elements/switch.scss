@@ -1,0 +1,28 @@
+input[type="checkbox"] {
+  &.switch {
+    width: 38px;
+    border-radius: 11px;
+    &:after {
+      left: 3px;
+      top: 3px;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      background: #bbc1e1;
+      transition: left 0.3s;
+    }
+    &:checked {
+      &:after {
+        background: white;
+        left: 19px;
+      }
+    }
+    &:disabled {
+      &:not(:checked) {
+        &:after {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}

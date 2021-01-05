@@ -1,0 +1,12 @@
+@import "../../../styles/variables";
+
+:host {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  background-color: lightblue;
+  padding: 15px;
+  border-radius: 5px;
+}

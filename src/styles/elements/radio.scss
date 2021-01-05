@@ -1,0 +1,13 @@
+input[type="radio"] {
+  border-radius: 50%;
+  &:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.9;
+    transform: scale(0.6);
+    top: 1px;
+    left: 1px;
+  }
+}

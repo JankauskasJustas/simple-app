@@ -1,0 +1,55 @@
+import { TodoListService } from './../todo-list/todo-list.service';
+import { Component, OnInit } from '@angular/core';
+import { generateId } from '../generateId';
+
+@Component({
+  selector: 'app-main-body',
+  templateUrl: './main-body.component.html',
+  styleUrls: ['./main-body.component.scss']
+})
+export class MainBodyComponent implements OnInit {
+  newTodoText: string;
+  todoItems: { name: string, done: boolean, id: string }[];
+  darkMode = false;
+  constructor(
+    private todoListService: TodoListService
+  ) { }
+
+  ngOnInit(): void {
+    this.todoItems = this.todoListService.getTodos();
+
+  }
+
+  onInputValueChange(e) {
+    this.newTodoText = e;
+  }
+
+  onAddClick() {
+    if (this.newTodoText) {
+      const newTodo = {
+        name: this.newTodoText,
+        done: false,
+        id: generateId()
+      };
+      this.todoItems.push(newTodo);
+      this.todoListService.setItems(this.todoItems);
+    }
+  }
+
+  onTodoDelete(id: string) {
+    const requestedTodoIndex = this.todoItems.findIndex(todo => todo.id === id);
+    this.todoItems.splice(requestedTodoIndex, 1);
+    this.todoListService.setItems(this.todoItems);
+  }
+
+  onDarkModeChange(e) {
+    this.darkMode = e;
+
+    if (this.darkMode) {
+      document.body.classList.toggle("dark-theme");
+    } else {
+      document.body.classList.remove("dark-theme");
+    }
+  }
+
+}

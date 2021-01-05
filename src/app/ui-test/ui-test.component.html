@@ -1,0 +1,50 @@
+<div class="component-container" [ngClass]="{'dark-theme': darkMode}">
+    <h1>Buttons</h1>
+    <juja-btn btnClass="csomething" (click)="changeType('primary')" btnType="primary" text="Primary"></juja-btn>
+    <juja-btn (click)="changeType('secondary')" btnType="secondary" text="Secondary"></juja-btn>
+    <juja-btn (click)="changeType('success')" btnType="success" text="Success"></juja-btn>
+    <juja-btn (click)="changeType('warning')" btnType="warning" text="Warning"></juja-btn>
+    <juja-btn (click)="changeType('danger')" btnType="danger" text="Danger"></juja-btn>
+    <juja-btn (click)="changeType(undefined)" [btnType]="type" btnClass="kazkas" [btnDisabled]="true" text="Change me">
+    </juja-btn>
+</div>
+<div class="component-container" [ngClass]="{'dark-theme': darkMode}">
+    <h1>Checkboxes</h1>
+    <juja-checkbox [isDarkMode]="darkMode" [color]="type" text="Checkbox 1"></juja-checkbox>
+    <juja-checkbox [isDarkMode]="darkMode" [color]="type" text="Checkbox" checked="true"></juja-checkbox>
+    <juja-checkbox [isDarkMode]="darkMode" [color]="type" disabled="true" text="Disabled"></juja-checkbox>
+    <juja-checkbox [isDarkMode]="darkMode" [color]="type" checked="true" [disabled]="true"></juja-checkbox>
+</div>
+<div class="component-container" [ngClass]="{'dark-theme': darkMode}">
+    <h1>Radio buttons</h1>
+    <juja-radio-group (checkChanged)="onChanges($event)" name="something">
+        <juja-radio [isDarkMode]="darkMode" [color]="type" value="multi-bubble" text="Multi bubble spinner">
+        </juja-radio>
+        <juja-radio [isDarkMode]="darkMode" [checked]="true" [color]="type" value="circle" text="Circle spinner">
+        </juja-radio>
+        <juja-radio [isDarkMode]="darkMode" [color]="type" value="dots" text="Dots spinner"></juja-radio>
+        <juja-radio [isDarkMode]="darkMode"></juja-radio>
+    </juja-radio-group>
+</div>
+<div class="component-container" [ngClass]="{'dark-theme': darkMode}">
+    <h1>Switch buttons</h1>
+    <juja-switch [isDarkMode]="darkMode" [checked]="darkMode" (checkChange)="onDarkModeChange($event)" [color]="type"
+        text="Toggle dark mode"></juja-switch>
+    <juja-switch [isDarkMode]="darkMode" text="switch"></juja-switch>
+    <juja-switch [isDarkMode]="darkMode" [color]="type" disabled="true" text="Disabled"></juja-switch>
+    <juja-switch [isDarkMode]="darkMode" [color]="type" checked="true" disabled="true"></juja-switch>
+</div>
+<div class="component-container" [ngClass]="{'dark-theme': darkMode}">
+    <h1>Input fields</h1>
+    <juja-input [isDarkMode]="darkMode" (inputValueChanged)="onInputChange($event)" text="Add new todo item"
+        [color]="type"></juja-input>
+</div>
+<div class="component-container" [ngClass]="{'dark-theme': darkMode}">
+    <h1>Spinner</h1>
+    <juja-spinner [color]="type" size="xs" [type]="spinnerType"></juja-spinner>
+    <juja-spinner [color]="type" size="s" [type]="spinnerType"></juja-spinner>
+    <juja-spinner [color]="type" size="m" [type]="spinnerType"></juja-spinner>
+    <juja-spinner [color]="type" size="l" [type]="spinnerType"></juja-spinner>
+    <juja-spinner [color]="type" size="xl" [type]="spinnerType"></juja-spinner>
+    <juja-spinner></juja-spinner>
+</div>

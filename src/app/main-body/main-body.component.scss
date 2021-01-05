@@ -1,0 +1,47 @@
+@import "../../styles/variables";
+
+:host {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+  width: 25%;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.main-container {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-rows: auto 1fr;
+  background-color: $white;
+
+  .form-control {
+    .text-aligned-start {
+      text-align: start;
+    }
+    display: inline-flex;
+    align-items: center;
+    padding: 15px;
+    width: 430px;
+    justify-content: space-between;
+  }
+}
+
+.todo-list {
+  display: flex;
+  justify-content: center;
+
+  app-todo-list {
+    width: 420px;
+  }
+}
+
+.main-container.dark-theme {
+  background-color: $black;
+}
+
+app-todo.dark-theme {
+  background-color: #0a556d;
+}

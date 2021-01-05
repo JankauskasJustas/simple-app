@@ -1,0 +1,19 @@
+<app-header [isDarkMode]="darkMode" (darkModeToggle)="onDarkModeChange($event)"></app-header>
+<div class="main-container" [ngClass]="{'dark-theme': darkMode}">
+    <div class="form-control">
+        <juja-input [isDarkMode]="darkMode" (inputValueChanged)="onInputValueChange($event)" class="text-aligned-start"
+            text="Add new todo">
+        </juja-input>
+        <juja-btn [btnDisabled]="!newTodoText" (click)="onAddClick()" class="floating-btn" btnType="secondary"
+            text="Add"></juja-btn>
+    </div>
+    <div class="todo-list">
+        <app-todo-list>
+            <app-todo (deleteTodo)="onTodoDelete($event)" *ngFor="let todo of todoItems"
+                [ngClass]="{'dark-theme': darkMode}" [id]="todo.id">
+                <juja-checkbox [checked]="todo.done" [isDarkMode]="darkMode" color="success" [text]="todo.name">
+                </juja-checkbox>
+            </app-todo>
+        </app-todo-list>
+    </div>
+</div>
