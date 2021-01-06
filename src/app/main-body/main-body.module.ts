@@ -3,7 +3,7 @@ import { HeaderModule } from './../header/header.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MainBodyComponent } from './main-body.component';
-import { JujaBtnModule, JujaCheckboxModule, JujaInputModule } from 'juja-library';
+import { JujaBtnModule, JujaCheckboxModule, JujaInputModule, JujaSpinnerModule } from 'juja-library';
 import { TodoListComponent } from '../todo-list/todo-list.component';
 
 
@@ -16,7 +16,8 @@ import { TodoListComponent } from '../todo-list/todo-list.component';
     JujaBtnModule,
     TodoModule,
     JujaCheckboxModule,
-    JujaInputModule
+    JujaInputModule,
+    JujaSpinnerModule
   ],
   exports: [MainBodyComponent]
 })

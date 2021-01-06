@@ -11,6 +11,7 @@ export class MainBodyComponent implements OnInit {
   newTodoText: string;
   todoItems: { name: string, done: boolean, id: string }[];
   darkMode = false;
+  isLoading = false;
   constructor(
     private todoListService: TodoListService
   ) { }
@@ -25,14 +26,19 @@ export class MainBodyComponent implements OnInit {
   }
 
   onAddClick() {
+    this.isLoading = true;
     if (this.newTodoText) {
-      const newTodo = {
-        name: this.newTodoText,
-        done: false,
-        id: generateId()
-      };
-      this.todoItems.push(newTodo);
-      this.todoListService.setItems(this.todoItems);
+      setTimeout(() => {
+
+        const newTodo = {
+          name: this.newTodoText,
+          done: false,
+          id: generateId()
+        };
+        this.todoItems.push(newTodo);
+        this.todoListService.setItems(this.todoItems);
+        this.isLoading = false;
+      }, 2000);
     }
   }
 
