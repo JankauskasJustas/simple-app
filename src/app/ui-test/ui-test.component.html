@@ -30,7 +30,7 @@
     <h1>Switch buttons</h1>
     <juja-switch [isDarkMode]="darkMode" [checked]="darkMode" (checkChange)="onDarkModeChange($event)" [color]="type"
         text="Toggle dark mode"></juja-switch>
-    <juja-switch [isDarkMode]="darkMode" text="switch"></juja-switch>
+    <juja-switch [isDarkMode]="darkMode" text="Switch with default color"></juja-switch>
     <juja-switch [isDarkMode]="darkMode" [color]="type" disabled="true" text="Disabled"></juja-switch>
     <juja-switch [isDarkMode]="darkMode" [color]="type" checked="true" disabled="true"></juja-switch>
 </div>
@@ -43,8 +43,8 @@
     <h1>Spinner</h1>
     <juja-spinner [color]="type" size="xs" [type]="spinnerType"></juja-spinner>
     <juja-spinner [color]="type" size="s" [type]="spinnerType"></juja-spinner>
-    <juja-spinner [color]="type" size="m" [type]="spinnerType"></juja-spinner>
-    <juja-spinner [color]="type" size="l" [type]="spinnerType"></juja-spinner>
-    <juja-spinner [color]="type" size="xl" [type]="spinnerType"></juja-spinner>
+    <juja-spinner [color]="type" size="m" [type]="'dots'"></juja-spinner>
+    <juja-spinner [color]="'success'" size="l" [type]="'multi-bubble'"></juja-spinner>
+    <juja-spinner [color]="'danger'" size="xl" [type]="spinnerType"></juja-spinner>
     <juja-spinner></juja-spinner>
 </div>

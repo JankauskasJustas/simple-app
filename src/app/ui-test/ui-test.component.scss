@@ -1,5 +1,12 @@
 @import "../../styles/variables";
-
+:host {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 div.component-container {
   border-radius: 5px;
   border: 1px solid lightblue;

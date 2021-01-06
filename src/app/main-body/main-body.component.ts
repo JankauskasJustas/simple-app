@@ -58,4 +58,10 @@ export class MainBodyComponent implements OnInit {
     }
   }
 
+  onCheckChange(check: boolean, id: string) {
+    const requestedTodo = this.todoItems.find(todo => todo.id === id);
+    requestedTodo.done = check;
+    this.todoListService.setItems(this.todoItems);
+  }
+
 }

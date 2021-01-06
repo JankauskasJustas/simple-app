@@ -11,7 +11,8 @@
         <app-todo-list>
             <app-todo (deleteTodo)="onTodoDelete($event)" *ngFor="let todo of todoItems"
                 [ngClass]="{'dark-theme': darkMode}" [id]="todo.id">
-                <juja-checkbox [checked]="todo.done" [isDarkMode]="darkMode" color="success" [text]="todo.name">
+                <juja-checkbox (checkChange)="onCheckChange($event, todo.id)" [checked]="todo.done"
+                    [isDarkMode]="darkMode" color="success" [text]="todo.name">
                 </juja-checkbox>
             </app-todo>
         </app-todo-list>

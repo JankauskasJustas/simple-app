@@ -10,7 +10,7 @@ export class UiTestComponent {
   type = '';
   selectedValue: any;
   spinnerType: 'multi-bubble' | 'dots' | 'circle' = 'circle';
-  darkMode: boolean = true;
+  darkMode: boolean = false;
   constructor() { }
 
   changeType(type: string) {
@@ -20,9 +20,14 @@ export class UiTestComponent {
     this.spinnerType = e;
   }
 
-  onDarkModeChange(e: boolean) {
-    console.log(e);
+  onDarkModeChange(e) {
     this.darkMode = e;
+
+    if (this.darkMode) {
+      document.body.classList.toggle("dark-theme");
+    } else {
+      document.body.classList.remove("dark-theme");
+    }
   }
 
   onInputChange(e) {
